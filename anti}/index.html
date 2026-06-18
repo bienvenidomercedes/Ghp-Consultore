@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GHP Consultores SRL - Contabilidad, impuestos y consultoría en República Dominicana</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#00210c",
+                        "inverse-primary": "#aec7f6",
+                        "tertiary-fixed": "#83fba5",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#179d53",
+                        "on-background": "#181c1e",
+                        "on-surface": "#181c1e",
+                        "background": "#f7fafc",
+                        "surface-container-low": "#f1f4f6",
+                        "surface": "#f7fafc",
+                        "surface-container-high": "#e5e9eb",
+                        "on-surface-variant": "#44474e",
+                        "surface-container": "#ebeef0",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fed65b",
+                        "tertiary": "#000e03",
+                        "inverse-on-surface": "#eef1f3",
+                        "primary-fixed-dim": "#aec7f6",
+                        "tertiary-container": "#002810",
+                        "primary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#745c00",
+                        "on-primary-container": "#708ab5",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#e9c349",
+                        "secondary": "#735c00",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "primary-container": "#002147",
+                        "surface-bright": "#f7fafc",
+                        "outline-variant": "#c4c6cf",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d7dadc",
+                        "primary": "#000a1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed-dim": "#66dd8b",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "outline": "#74777f",
+                        "surface-tint": "#465f88",
+                        "inverse-surface": "#2d3133",
+                        "accent-gold": "#fed65b",
+                        "accent-emerald": "#179d53"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "container-max": "1200px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "section-gap": "80px"
+                    },
+                    fontFamily: {
+                        "label-caps": ["Inter"],
+                        "headline-md-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "title-sm": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "button-text": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "label-caps": ["12px", { "lineHeight": "1.5", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "button-text": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    },
+                    boxShadow: {
+                        'ambient': '0px 4px 20px rgba(0, 33, 71, 0.05)',
+                        'ambient-hover': '0px 8px 30px rgba(0, 33, 71, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-out;
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        .faq-icon {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar Shared Component -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-primary/95 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg text-title-sm font-bold text-primary dark:text-inverse-primary">
+                GHP Consultores SRL
+            </div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-primary dark:text-secondary-fixed border-b-2 border-primary dark:border-secondary-fixed pb-1 font-button-text text-button-text" href="#inicio">Inicio</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:translate-y-[-2px] transition-transform duration-200 font-button-text text-button-text" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:translate-y-[-2px] transition-transform duration-200 font-button-text text-button-text" href="#nosotros">Nosotros</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:translate-y-[-2px] transition-transform duration-200 font-button-text text-button-text" href="#proceso">Proceso</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:translate-y-[-2px] transition-transform duration-200 font-button-text text-button-text" href="#faq">FAQ</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-secondary-fixed transition-colors hover:translate-y-[-2px] transition-transform duration-200 font-button-text text-button-text" href="#contacto">Contacto</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex bg-on-tertiary-container text-on-tertiary px-6 py-3 rounded hover:bg-tertiary-fixed-dim transition-colors font-button-text text-button-text shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-2px]" href="#contacto">
+                    Agendar consulta
+                </a>
+<button aria-label="Abrir menú" class="md:hidden text-primary" id="menu-toggle">
+<span class="material-symbols-outlined" id="menu-icon">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Navigation -->
+<div class="fixed inset-0 z-40 md:hidden pointer-events-none" id="mobile-menu-overlay">
+<div class="absolute inset-0 bg-primary/40 opacity-0 transition-opacity duration-300" id="mobile-menu-backdrop"></div>
+<nav class="absolute top-0 right-0 h-full w-72 bg-surface-container-lowest shadow-ambient pointer-events-auto flex flex-col pt-24 px-6 gap-2" id="mobile-menu">
+<a class="text-primary font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#inicio">Inicio</a>
+<a class="text-on-surface-variant font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#servicios">Servicios</a>
+<a class="text-on-surface-variant font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#nosotros">Nosotros</a>
+<a class="text-on-surface-variant font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#proceso">Proceso</a>
+<a class="text-on-surface-variant font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#faq">FAQ</a>
+<a class="text-on-surface-variant font-button-text text-button-text py-3 border-b border-surface-variant mobile-nav-link" href="#contacto">Contacto</a>
+<a class="mt-4 inline-flex justify-center items-center bg-on-tertiary-container text-on-tertiary px-6 py-3 rounded font-button-text text-button-text shadow-ambient mobile-nav-link" href="#contacto">Agendar consulta</a>
+</nav>
+</div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative pt-section-gap pb-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low min-h-[819px] flex items-center overflow-hidden" id="inicio">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-10" data-alt="A professional, brightly lit modern corporate office in a high-rise building with expansive windows showing a city skyline. The room features a clean, minimalist design with a large glass conference table, sleek ergonomic chairs, and subtle indoor greenery. The lighting is soft and natural, emphasizing a pristine, white and navy blue color palette, projecting stability, success, and high-end financial consultancy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCy695ZBx0_NZ_8lpK6TNkXjokCe6KGfstX1mWMNSrbJL7LutZvgeaZz7yFYBVPFKWHk7S6EkV_sDx36PwUV7DyKySjp0IIcGt-A5GutOAXMzi4tD-CwyXvSKTFRxgwiH4-N2TfkpD9Ep-2znW2JSPmF_rNd9Vs6FfPq0m610gBmGoejBOQ9XGIYNxV2tPAG5V56OQBIw67z1d-9Gx2TqQNJ35wmZlGbkjvptrTcLk1C-V6pByCuTEw5KkdWTnpvNVFfaGXHjHdRvA')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low via-surface-container-low/90 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8 reveal">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                        Contabilidad, impuestos y consultoría para que tu empresa crezca con orden y tranquilidad
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                        Ayudamos a pymes y emprendedores en República Dominicana a tomar el control de sus finanzas, cumplir con sus obligaciones fiscales y tomar decisiones estratégicas basadas en datos claros.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex justify-center items-center bg-on-tertiary-container text-on-tertiary px-8 py-4 rounded font-button-text text-button-text shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-2px] transition-all" href="#contacto">
+                            Agendar consulta gratuita
+                        </a>
+<a class="inline-flex justify-center items-center bg-surface text-primary border border-outline px-8 py-4 rounded font-button-text text-button-text hover:bg-surface-container hover:border-primary transition-all" href="https://wa.me/18095545122" target="_blank">
+<span class="material-symbols-outlined mr-2">chat</span>
+                            WhatsApp
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem Section (Bento Grid) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">
+                        ¿Tu contabilidad te está quitando tiempo y claridad?
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                        Muchos dueños de negocios enfrentan estos desafíos diariamente, limitando su capacidad de crecimiento.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all border-t-4 border-t-primary reveal">
+<span class="material-symbols-outlined text-error text-3xl mb-4">warning</span>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Riesgos Fiscales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Incertidumbre sobre el cumplimiento correcto ante la DGII, exponiéndose a multas innecesarias.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all border-t-4 border-t-secondary-container reveal delay-100">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">visibility_off</span>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Falta de Reportes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tomar decisiones a ciegas porque no recibes estados financieros claros ni a tiempo.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all border-t-4 border-t-primary reveal delay-200">
+<span class="material-symbols-outlined text-primary-container text-3xl mb-4">schedule</span>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Pérdida de Tiempo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Invertir horas en tareas operativas de contabilidad en lugar de enfocarte en vender y crecer.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all border-t-4 border-t-secondary-container reveal delay-300">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">explore_off</span>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Sin Asesoría</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Tener un contador que solo digita facturas, pero no te asesora sobre cómo optimizar tus recursos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="servicios">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">
+                        Nuestros Servicios
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                        Soluciones integrales diseñadas para la tranquilidad y el éxito financiero de su empresa.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Contabilidad general</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Registro estructurado y preciso de todas sus transacciones para reflejar la realidad financiera de su negocio.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal delay-100">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">receipt_long</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Declaraciones fiscales</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Preparación y presentación oportuna de impuestos (ITBIS, IR-2, IR-1, etc.) garantizando el cumplimiento ante la DGII.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal delay-200">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">group</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Nómina</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Gestión eficiente de pagos a empleados, retenciones y reportes a la TSS y Ministerio de Trabajo.</p>
+</div>
+<!-- Service 4 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Consultoría financiera</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Análisis profundo de sus números para optimizar costos, mejorar flujos de efectivo y planificar el crecimiento.</p>
+</div>
+<!-- Service 5 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal delay-100">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">domain_add</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Constitución de empresas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Acompañamiento legal y corporativo completo para formalizar su negocio desde cero sin contratiempos.</p>
+</div>
+<!-- Service 6 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all group reveal delay-200">
+<div class="w-12 h-12 bg-primary-fixed rounded flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">fact_check</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Auditoría</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Revisión independiente y exhaustiva de sus estados financieros para asegurar transparencia y confiabilidad.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="nosotros">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="reveal">
+<p class="font-label-caps text-label-caps text-on-tertiary-container uppercase mb-4">Sobre nosotros</p>
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-6">
+                        Más de una década acompañando empresas dominicanas
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                        En GHP Consultores SRL combinamos experiencia contable, conocimiento fiscal y visión estratégica para que cada cliente tome decisiones con confianza.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                        Trabajamos con pymes, profesionales independientes y corporaciones que buscan un aliado cercano, no solo un proveedor de servicios. Nuestro equipo se mantiene actualizado con los cambios de la DGII, la TSS y las normativas laborales para proteger tu negocio.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Atención personalizada con un contador asignado a tu cuenta</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Reportes financieros claros y entregados a tiempo</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-on-tertiary-container mt-0.5">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Cumplimiento fiscal sin sorpresas ni multas evitables</span>
+</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-4 reveal">
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient text-center">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">10+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Años de experiencia</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient text-center">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">200+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Clientes activos</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient text-center">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">100%</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Cumplimiento DGII</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient text-center border-t-4 border-t-secondary-container">
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary mb-2">24h</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Tiempo de respuesta</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="proceso">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<p class="font-label-caps text-label-caps text-on-tertiary-container uppercase mb-4">Cómo trabajamos</p>
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">
+                        Un proceso claro en 4 pasos
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                        Desde la primera consulta hasta el seguimiento continuo, cada etapa está diseñada para darte tranquilidad y resultados medibles.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all reveal">
+<div class="w-10 h-10 bg-primary text-on-primary rounded flex items-center justify-center font-button-text text-button-text mb-6">01</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Diagnóstico inicial</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Evaluamos la situación contable y fiscal actual de tu empresa sin costo en la primera consulta.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all reveal delay-100">
+<div class="w-10 h-10 bg-primary text-on-primary rounded flex items-center justify-center font-button-text text-button-text mb-6">02</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Propuesta a medida</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Diseñamos un plan de servicios adaptado a tu tamaño, sector y objetivos de crecimiento.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all reveal delay-200">
+<div class="w-10 h-10 bg-primary text-on-primary rounded flex items-center justify-center font-button-text text-button-text mb-6">03</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Implementación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Organizamos tu contabilidad, configuramos reportes y establecemos calendarios de cumplimiento.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-4px] transition-all reveal delay-300">
+<div class="w-10 h-10 bg-on-tertiary-container text-on-tertiary rounded flex items-center justify-center font-button-text text-button-text mb-6">04</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-3">Seguimiento continuo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Te acompañamos con asesoría proactiva, alertas fiscales y reuniones periódicas de revisión.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="faq">
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-16 reveal">
+<p class="font-label-caps text-label-caps text-on-tertiary-container uppercase mb-4">Preguntas frecuentes</p>
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">
+                        Resolvemos tus dudas
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Las preguntas más comunes de nuestros clientes antes de contratar nuestros servicios.
+                    </p>
+</div>
+<div class="space-y-4">
+<div class="faq-item bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient reveal">
+<button class="faq-toggle w-full flex justify-between items-center p-6 text-left" type="button">
+<span class="font-title-sm text-title-sm text-primary pr-4">¿Qué impuestos debe pagar una empresa en República Dominicana?</span>
+<span class="material-symbols-outlined text-primary faq-icon flex-shrink-0">expand_more</span>
+</button>
+<div class="faq-answer px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Depende del tipo de empresa y su actividad. Los más comunes son ITBIS, ISR (IR-1 o IR-2), retenciones y aportes a la TSS. En la consulta inicial evaluamos tu caso específico.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient reveal">
+<button class="faq-toggle w-full flex justify-between items-center p-6 text-left" type="button">
+<span class="font-title-sm text-title-sm text-primary pr-4">¿Puedo contratar solo declaraciones fiscales sin contabilidad completa?</span>
+<span class="material-symbols-outlined text-primary faq-icon flex-shrink-0">expand_more</span>
+</button>
+<div class="faq-answer px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Sí, ofrecemos planes modulares. Sin embargo, recomendamos contabilidad al día para evitar inconsistencias que puedan generar observaciones de la DGII.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient reveal">
+<button class="faq-toggle w-full flex justify-between items-center p-6 text-left" type="button">
+<span class="font-title-sm text-title-sm text-primary pr-4">¿Con qué frecuencia recibiré reportes financieros?</span>
+<span class="material-symbols-outlined text-primary faq-icon flex-shrink-0">expand_more</span>
+</button>
+<div class="faq-answer px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">Los reportes mensuales son estándar. También puedes solicitar reportes trimestrales o personalizados según las necesidades de tu negocio.</p>
+</div>
+</div>
+<div class="faq-item bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient reveal">
+<button class="faq-toggle w-full flex justify-between items-center p-6 text-left" type="button">
+<span class="font-title-sm text-title-sm text-primary pr-4">¿La primera consulta tiene costo?</span>
+<span class="material-symbols-outlined text-primary faq-icon flex-shrink-0">expand_more</span>
+</button>
+<div class="faq-answer px-6 pb-6">
+<p class="font-body-md text-body-md text-on-surface-variant">No. La consulta inicial es gratuita y sin compromiso. Es una oportunidad para conocer tu situación y explicarte cómo podemos ayudarte.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-primary text-on-primary text-center">
+<div class="max-w-3xl mx-auto reveal">
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md mb-6">
+                    ¿Listo para llevar la contabilidad de tu empresa al siguiente nivel?
+                </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim mb-10">
+                    Déjanos encargarnos de los números mientras tú te enfocas en hacer crecer tu negocio.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="inline-flex justify-center items-center bg-secondary-container text-on-secondary-container px-8 py-4 rounded font-button-text text-button-text hover:bg-secondary-fixed transition-colors shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-2px]" href="#contacto">
+                        Agendar consulta gratuita
+                    </a>
+<a class="inline-flex justify-center items-center bg-transparent text-on-primary border border-outline px-8 py-4 rounded font-button-text text-button-text hover:bg-primary-container transition-colors" href="tel:8095545122">
+                        Llamar ahora
+                    </a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="contacto">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<p class="font-label-caps text-label-caps text-on-tertiary-container uppercase mb-4">Contáctanos</p>
+<h2 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">
+                    Agenda tu consulta gratuita
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Completa el formulario o escríbenos directamente. Respondemos en menos de 24 horas hábiles.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<form class="bg-surface-container-lowest p-8 rounded-lg border border-surface-variant shadow-ambient reveal" id="contact-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block font-button-text text-button-text text-primary mb-2" for="nombre">Nombre</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body-md text-body-md" id="nombre" name="nombre" placeholder="Tu nombre" required type="text"/>
+</div>
+<div>
+<label class="block font-button-text text-button-text text-primary mb-2" for="empresa">Empresa</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body-md text-body-md" id="empresa" name="empresa" placeholder="Nombre de tu empresa" type="text"/>
+</div>
+</div>
+<div class="mb-6">
+<label class="block font-button-text text-button-text text-primary mb-2" for="email">Correo electrónico</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body-md text-body-md" id="email" name="email" placeholder="tu@empresa.com" required type="email"/>
+</div>
+<div class="mb-6">
+<label class="block font-button-text text-button-text text-primary mb-2" for="telefono">Teléfono</label>
+<input class="w-full px-4 py-3 rounded border border-outline-variant bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body-md text-body-md" id="telefono" name="telefono" placeholder="809-000-0000" type="tel"/>
+</div>
+<div class="mb-6">
+<label class="block font-button-text text-button-text text-primary mb-2" for="mensaje">Mensaje</label>
+<textarea class="w-full px-4 py-3 rounded border border-outline-variant bg-surface focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-body-md text-body-md resize-none" id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu negocio y qué necesitas..." required rows="4"></textarea>
+</div>
+<button class="w-full inline-flex justify-center items-center bg-on-tertiary-container text-on-tertiary px-8 py-4 rounded font-button-text text-button-text shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-2px] transition-all" type="submit">
+                    Enviar mensaje
+                </button>
+</form>
+<div class="space-y-6 reveal">
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">location_on</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary mb-1">Ubicación</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Santo Domingo, República Dominicana</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">call</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary mb-1">Teléfono</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="tel:8095545122">(809) 554-5122</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">mail</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary mb-1">Correo</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="mailto:info@ghpconsultores.com">info@ghpconsultores.com</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-ambient flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">schedule</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary mb-1">Horario</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Lunes a viernes, 8:00 AM – 5:00 PM</p>
+</div>
+</div>
+<a class="inline-flex justify-center items-center w-full bg-[#25D366] text-white px-8 py-4 rounded font-button-text text-button-text shadow-ambient hover:shadow-ambient-hover hover:translate-y-[-2px] transition-all" href="https://wa.me/18095545122" target="_blank">
+<span class="material-symbols-outlined mr-2">chat</span>
+                    Escribir por WhatsApp
+                </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-lowest dark:bg-primary w-full pt-section-gap pb-unit border-t border-outline-variant dark:border-on-primary-container">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-title-sm font-bold text-primary dark:text-inverse-primary mb-4">
+                    GHP Consultores SRL
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant mb-4">
+                    Consultoría integral en República Dominicana.
+                </p>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-primary mb-4">Servicios</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#servicios">Contabilidad</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#servicios">Fiscal</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#servicios">Nómina</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-primary mb-4">Empresa</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#nosotros">Nosotros</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#contacto">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-title-sm text-title-sm text-primary mb-4">Legal</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#">Aviso Legal</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary hover:underline transition-all" href="#">Privacidad</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-surface-variant pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant text-sm">
+                © 2026 GHP Consultores SRL. Todos los derechos reservados.
+            </p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-ambient hover:shadow-ambient-hover hover:scale-105 transition-all z-50" href="https://wa.me/18095545122" target="_blank">
+<span class="material-symbols-outlined text-3xl">chat</span>
+</a>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+            reveals.forEach(reveal => revealOnScroll.observe(reveal));
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+            const menuIcon = document.getElementById('menu-icon');
+            let menuOpen = false;
+
+            function toggleMenu(open) {
+                menuOpen = open;
+                mobileMenu.classList.toggle('open', open);
+                mobileOverlay.classList.toggle('pointer-events-none', !open);
+                mobileBackdrop.classList.toggle('opacity-100', open);
+                mobileBackdrop.classList.toggle('opacity-0', !open);
+                menuIcon.textContent = open ? 'close' : 'menu';
+                document.body.style.overflow = open ? 'hidden' : '';
+            }
+
+            menuToggle.addEventListener('click', () => toggleMenu(!menuOpen));
+            mobileBackdrop.addEventListener('click', () => toggleMenu(false));
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+
+            document.querySelectorAll('.faq-toggle').forEach(button => {
+                button.addEventListener('click', () => {
+                    const item = button.closest('.faq-item');
+                    const isOpen = item.classList.contains('open');
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                });
+            });
+
+            document.getElementById('contact-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const nombre = document.getElementById('nombre').value;
+                const mensaje = document.getElementById('mensaje').value;
+                const telefono = document.getElementById('telefono').value;
+                const text = encodeURIComponent(`Hola, soy ${nombre}. ${mensaje}${telefono ? ` Mi teléfono: ${telefono}` : ''}`);
+                window.open(`https://wa.me/18095545122?text=${text}`, '_blank');
+            });
+        });
+    </script>
+</body></html>
